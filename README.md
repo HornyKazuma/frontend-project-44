@@ -36,4 +36,4 @@
 _Простое число_ — целое положительное число, имеющее ровно два различных натуральных делителя — единицу и самого себя.<br>
 Например, 7 — простое число, потому что делится без остатка только на 1 и на себя.
 ### Запуск: `brain-prime`<br>
-[![asciicast](https://asciinema.org/a/HAe9qK345Hhw3vqPerAYzvGkt.svg)](https://asciinema.org/a/HAe9qK345Hhw3vqPerAYzvGkt)
+[![asciicast](https://asciinema.org/a/TOHdpQgBEtEU9WWZXu4otYzlG.svg)](https://asciinema.org/a/TOHdpQgBEtEU9WWZXu4otYzlG)
