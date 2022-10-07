@@ -29,7 +29,7 @@
 Пользователю показывается ряд чисел, образующий арифметическую прогрессию, случайное число из этого ряда заменятся двумя точками.<br>
 Игрок должен определить это число.
 ### Запуск: `brain-progression`<br>
-[![https://asciinema.org/a/s2fKeqDRIOAoImxQb57QWbrbg.svg)](https://asciinema.org/a/s2fKeqDRIOAoImxQb57QWbrbg)
+[![asciicast][https://asciinema.org/a/s2fKeqDRIOAoImxQb57QWbrbg.svg)](https://asciinema.org/a/s2fKeqDRIOAoImxQb57QWbrbg)
 # Игра: "Простое ли число?"
 ### Описание игры:
 Пользователю показывается случайное число. И ему нужно ответить **yes**, если число является **простым**, или **no** — если число не является простым.<br>
