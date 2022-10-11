@@ -1,1 +1,5 @@
-export default (int = 100) => Math.floor(Math.random() * int);
+function getRandomNum(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
+  
+  export default getRandomNum;

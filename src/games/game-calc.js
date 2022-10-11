@@ -23,8 +23,8 @@ const calculate = (firstNum, secondNum, operator) => {
 
 const getArrWithAnswerQuestion = () => { //
   const randomOperator = operators[getRandom(0, 2)];
-  const firstOperand = getRandomNum();
-  const secondOperand = getRandomNum();
+  const firstOperand = getRandomNum(1, 50);
+  const secondOperand = getRandomNum(1, 50);
   const question = `${firstOperand} ${randomOperator} ${secondOperand}`; // сгенерированный вопрос
   const correctAnswer = calculate(firstOperand, secondOperand, randomOperator);
   return [question, correctAnswer.toString()];
