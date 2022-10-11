@@ -4,10 +4,6 @@ import gameCore from '../index.js';
 const operators = ['+', '-', '*'];
 const task = 'What is the result of the expression?';
 
-function getRandom(min, max) {
-  return Math.floor(Math.random() * (max - min + 1)) + min;
-};
-
 const calculate = (firstNum, secondNum, operator) => {
   switch (operator) {
     case '+':
@@ -22,7 +18,7 @@ const calculate = (firstNum, secondNum, operator) => {
 };
 
 const getArrWithAnswerQuestion = () => { //
-  const randomOperator = operators[getRandom(0, 2)];
+  const randomOperator = operators[getRandomNum(0, 2)];
   const firstOperand = getRandomNum(1, 50);
   const secondOperand = getRandomNum(1, 50);
   const question = `${firstOperand} ${randomOperator} ${secondOperand}`; // сгенерированный вопрос
