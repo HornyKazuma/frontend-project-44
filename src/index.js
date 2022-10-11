@@ -1,30 +1,23 @@
 import readlineSync from 'readline-sync';
 
-const getAnswer = (question) => {
-  const answer = readlineSync.question(question);
-  return answer;
-};
+const numberOfRounds = 3;
 
-const numberOfAttempts = 3;
-
-export default (task, getArrWithAnswerQuestion) => {
+function gameCore(gameRule, newRound) {
   console.log('Welcome to the Brain Games!');
-  const playerName = getAnswer('May I have your name? ');
+  const playerName = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${playerName}!`);
-  console.log(task);
-  for (let i = 1; i <= numberOfAttempts; i += 1) {
-    const getQuestionWithAnswer = getArrWithAnswerQuestion();
-    // На каждой итерации формируем новый вопрос и ответ.
-    // Функция формирования ответа и вопроса у каждой игры своя.
-    console.log(`Question: ${getQuestionWithAnswer[0]}`);
-    const playerAnswer = getAnswer('Your answer: ');
-    if (playerAnswer === getQuestionWithAnswer[1]) {
-      console.log('Correct!');
-    } else {
-      console.log(`"${playerAnswer}" is wrong answer ;(. Correct answer was "${getQuestionWithAnswer[1]}".`);
-      console.log(`Let's try again, ${playerName}!`);
+  console.log(gameRule);
+  for (let currentRound = 0; currentRound < numberOfRounds; currentRound += 1) {
+    const [question, answer] = newRound();
+    console.log(`Question: ${question}`);
+    const playerAnswer = readlineSync.question('Your answer: ');
+    if (playerAnswer !== answer) {
+      console.log(`'${playerAnswer}'is wrong answer ;(. Correct answer was '${answer}'.\n Let's try again, ${playerName}!`);
       return;
     }
+    console.log('Correct!');
   }
   console.log(`Congratulations, ${playerName}!`);
-};
+}
+
+export default gameCore;
