@@ -1,4 +1,3 @@
-import getRandElemArr from '../helpers/getRandElemArr.js';
 import getRandomNum from '../helpers/getRandomNum.js';
 import gameCore from '../index.js';
 
@@ -18,8 +17,12 @@ const calculate = (firstNum, secondNum, operator) => {
   }
 };
 
+function getRandom(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+};
+
 const getArrWithAnswerQuestion = () => { //
-  const randomOperator = getRandElemArr(operators);
+  const randomOperator = operators[getRandom(0, 2)];
   const firstOperand = getRandomNum();
   const secondOperand = getRandomNum();
   const question = `${firstOperand} ${randomOperator} ${secondOperand}`; // сгенерированный вопрос
