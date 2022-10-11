@@ -1,29 +1,29 @@
 import getRandomNum from '../helpers/getRandomNum.js';
 import gameCore from '../index.js';
 
-const task = 'What number is missing in the progression?';
+const description = 'What number is missing in the progression?';
 
-const getProgression = () => {
-  const arrWithProgression = [];
-  const startOfProgression = getRandomNum();
-  const progressionIndexChange = getRandomNum(5);
-
-  for (let i = startOfProgression; arrWithProgression.length < 10; i += progressionIndexChange) {
-    arrWithProgression.push(i);
+function getProgression(firstNumber, arrayLength, d) {
+  let result = [firstNumber];
+  for (let i = 0; i < arrayLength; i += 1) {
+    result.push(result[i] + d);
   }
+  const findMe = result[Math.floor(Math.random() * result.length)];
+  result[result.indexOf(findMe)] = '..';
+  result = String(result.join(' '));
+  return [result, findMe];
+}
 
-  return arrWithProgression;
-};
+function getQuestionAndAnswer() {
+  const firstNumber = getRandomNum(1, 100);
+  const arrayLength = getRandomNum(5, 10);
+  const hiddenNumberIndex = getRandomNum(1, 10);
+  const [question, currentAnswer] = getProgression(firstNumber, arrayLength, hiddenNumberIndex);
+  const answer = String(currentAnswer);
+  return [question, answer];
+}
+function brainProgression() {
+  gameCore(description, getQuestionAndAnswer);
+}
 
-const getArrWithAnswerQuestion = () => {
-  const arrWithProgression = getProgression();
-  const randIndexArr = getRandomNum(arrWithProgression.length, 'floor');
-  const correctAnswer = arrWithProgression[randIndexArr];
-  arrWithProgression[randIndexArr] = '..';
-  const question = arrWithProgression.join(' ');
-  return [question, correctAnswer.toString()];
-};
-
-export default () => {
-  gameCore(task, getArrWithAnswerQuestion);
-};
+export default brainProgression;
