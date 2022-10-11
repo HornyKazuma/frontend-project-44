@@ -1,1 +1,1 @@
-export default (int = 100) => Math.floor(Math.random() * int);
+export default (int = 50) => Math.floor(Math.random() * int);
