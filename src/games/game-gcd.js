@@ -14,8 +14,8 @@ const getGreatestCommonDivisor = (firstNum, secondNum) => {
 };
 
 const getArrWithAnswerQuestion = () => {
-  const firstNum = getRandomNum(100);
-  const secondNum = getRandomNum(100);
+  const firstNum = getRandomNum(1, 100);
+  const secondNum = getRandomNum(1, 100);
   const question = `${firstNum} ${secondNum}`;
   const correctAnswer = getGreatestCommonDivisor(firstNum, secondNum);
 
