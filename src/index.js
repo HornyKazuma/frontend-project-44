@@ -1,11 +1,17 @@
-import getAnswer from './helpers/getAnswer.js';
+import readlineSync from 'readline-sync';
+
+const getAnswer = (question) => {
+  const answer = readlineSync.question(question);
+  return answer;
+};
+
+const numberOfAttempts = 3;
 
 export default (task, getArrWithAnswerQuestion) => {
   console.log('Welcome to the Brain Games!');
   const playerName = getAnswer('May I have your name? ');
   console.log(`Hello, ${playerName}!`);
   console.log(task);
-  const numberOfAttempts = 3;
   for (let i = 1; i <= numberOfAttempts; i += 1) {
     const getQuestionWithAnswer = getArrWithAnswerQuestion();
     // На каждой итерации формируем новый вопрос и ответ.
