@@ -16,7 +16,7 @@ const isPrime = (num) => {
 };
 
 const getArrWithAnswerQuestion = () => {
-  const randomNum = getRandomNum(100);
+  const randomNum = getRandomNum(1, 20);
   const correctAnswer = isPrime(randomNum) ? 'yes' : 'no';
   return [randomNum, correctAnswer];
 };
